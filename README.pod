@@ -1,0 +1,71 @@
+=head1 NAME
+
+imail2vpopmail.pl - migrate from IMail Server to qmail/vpopmail
+
+=head1 SYNOPSIS
+
+    # imail2vpopmail.pl > imail2vpopmail.sh
+    OR
+    # imail2vpopmail.pl singledomain-to-process.com > imail2vpopmail.sh
+
+    And then:
+    # ./imail2vpopmail.sh
+
+=head1 DESCRIPTION
+
+This script takes a windows registry key export (in plain text) and creates a shell script to run vpopmail commands for importing the appropriate domain data, user information, forward, aliases, address book files, and user mailboxes.
+
+This script does NOT currently handle:
+  -Converting imail's "catch all" addresses (alias of "nobody")
+  -Creating vacation messages for anyone using it on the imail side
+
+This script was developed quickly and through many iterations to meet the needs of a dynamic conversion process.  It may well not exemplify best practices, and is not intended to be an out of the box solution for every imail to vpopmail conversion.  You may have to modify it extensively for your setup.  It may not work at all for you. It might delete everything from your system and make you cry.  Use at your own risk.
+
+=head1 REQUIREMENTS
+
+Perl
+
+The L<Crypt::Imail> Perl module
+
+The "dosunix" command line tool
+
+The "mb2md" command line tool
+
+Existing vpopmail installation
+
+Clone of your imail directory hierarchy
+
+=head1 LICENSE
+
+This program is free software; anyone can use, redistribute, and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation (either version 2 of the
+License, or at your option, any later version) so long as this notice
+and the copyright information above remain intact and unchanged.
+Selling this code in any form for any reason is expressly forbidden.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this software; if not, write to
+	Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+	Boston, MA  02111-1307 USA
+You may also find the license at:
+ 	http://www.gnu.org/copyleft/gpl.html
+
+=head1 AUTHOR
+
+Chris Hardie <chris@summersault.com>
+
+Originally developed for and sponsored by Parallax Systems, http://www.parallax.ws/
+
+=head1 SEE ALSO
+
+L<IMail|http://www.imailserver.com/>
+
+L<vpopmail|http://www.inter7.com/index.php?page=vpopmail>
+
+=cut
